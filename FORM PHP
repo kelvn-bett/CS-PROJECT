@@ -11,8 +11,6 @@ if(isset($_POST["submit_form"])){
 	$admnumber = htmlspecialchars($_POST["admnumber"]);
 	$stdyear = htmlspecialchars($_POST["stdyear"]);
 	$hstname = htmlspecialchars($_POST["hstname"]);
-	$rmtype = htmlspecialchars($_POST["rmtype"]);
-	$agreement = htmlspecialchars($_POST["agreement"]);
 	
 	
 	//Query inserting data into the  table
