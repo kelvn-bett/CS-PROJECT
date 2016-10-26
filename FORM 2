@@ -1,0 +1,30 @@
+<?php
+require_once "connect.php";
+
+if(isset($_POST["submit_form"])){
+	// Variable declaration
+	$fname = htmlspecialchars($_POST["firstname"]);
+	$lname = htmlspecialchars($_POST["lastname"]);
+	$phonenumber = addslashes($_POST["phonenumber"]);
+	$email = htmlspecialchars($_POST["email"]);
+	$university = htmlspecialchars($_POST["university"]);
+	$admnumber = htmlspecialchars($_POST["admnumber"]);
+	$stdyear = htmlspecialchars($_POST["stdyear"]);
+	$hstname = htmlspecialchars($_POST["hstname"]);
+	
+	
+	//Query inserting data into the  table
+	$sql = "INSERT INTO `hostel_registration`(`firstname`,`lastname`, `phonenumber`, `email`, `university`, `admnumber`,`stdyear`, `hstname` , `rmtype` , `agreement`) VALUES ('$fname', '$lname', '$phonenumber', '$email', '$university', '$admnumber', '$stdyear', '$hstname' , '$rmtype' , '$agreement')";
+
+	//Query to verify new record was created successfully in the  table
+	if ($conn->query($sql) === TRUE) {
+		echo "New record created successfully";
+		@header("Location:../payment/index.php");
+		exit();
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+}
+
+
+?>
