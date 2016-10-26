@@ -6,8 +6,7 @@ if(isset($_POST["submit_form"])){
 	$fname = htmlspecialchars($_POST["firstname"]);
 	$lname = htmlspecialchars($_POST["lastname"]);
 	$phonenumber = addslashes($_POST["phonenumber"]);
-	$email = htmlspecialchars($_POST["email"]);
-	$university = htmlspecialchars($_POST["university"]);
+	
 	$admnumber = htmlspecialchars($_POST["admnumber"]);
 	$stdyear = htmlspecialchars($_POST["stdyear"]);
 	$hstname = htmlspecialchars($_POST["hstname"]);
